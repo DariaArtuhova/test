@@ -1,0 +1,237 @@
+@font-face {
+  font-family: "Trebuchet Light";
+  src: url("../fonts/Exo2.0-Thin.otf");
+  font-weight: 400;
+}
+body:before {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: url("../img/shadow.png");
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height:100vh;
+  margin: 0;
+  font-family: 'Trebuchet MS', serif;
+  background: #000 url("../img/background.png") center center;
+h1 {
+  font-family: "Trebuchet Light", serif;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 44px;
+  color: #fff;
+  margin-bottom: 0;
+  text-shadow: 0 1px 1px #000000;
+  text-align: center;
+}
+
+  .product-cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .product-card {
+      width: 320px;
+      margin: 25px 40px;
+      cursor: pointer;
+      .card-header {
+        display: -ms-flexbox;
+        display: flex;
+        height: 44px;
+        margin-bottom: -1px;
+
+        .card-body:hover, .card-corner {
+          position: relative;
+          width: 43px;
+          background: linear-gradient(-45deg, #fff, #fff 28.5px, #2ea9e6 0, #2ea9e6 32px, transparent 0);
+        }
+
+        .card-rectangle {
+          -ms-flex-positive: 1;
+          flex-grow: 1;
+          padding: 15px 0 0 8px;
+          border: 4px solid #1698d9;
+          border-bottom: none;
+          border-left: none;
+          border-radius: 0 12px 0 0;
+          background: #fff;
+          .card-desc {
+            color: #666666;
+            font-size: 16px;
+          }
+        }
+      }
+
+      .product-info {
+        background: #fff;
+        border: 4px solid #1698D9;
+        border-top: none;
+        border-radius: 0 0 12px 12px;
+        position: relative;
+        padding: 0 61px 0 48px;
+        height: 437px;
+        h2 {
+          font-weight: 700;
+          margin-top: 0;
+          font-size: 48px;
+          margin-bottom: 15px;
+          span {
+            display: block;
+            color: #000;
+            font-size: 24px;
+          }
+        }
+        p {
+          font-size: 14px;
+          color: #666666;
+          line-height: 16px;
+          span {
+            font-weight: 700;
+          }
+        }
+        img {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+        .card-circle {
+          position: absolute;
+          bottom: 15px;
+          right: 15px;
+          width: 81px;
+          height: 81px;
+          border-radius: 50%;
+          background: #1698d9;
+          color: #fff;
+          text-align: center;
+          .product-weight {
+            position: relative;
+            top: 10px;
+          }
+          span {
+            display: block;
+            line-height: 22px;
+          }
+          .number {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 5px;
+          }
+          .mass {
+            font-size: 21px;
+            color: #fff;
+          }
+        }
+      }
+      .link {
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        span {
+          color: #1698D9;
+          a {
+            color: #1698D9;
+            text-decoration: none;
+            outline: none;
+            border-bottom: 1px dashed #1698D9;
+          }
+        }
+      }
+    }
+  }
+}
+
+#selected {
+  .card-rectangle {
+    border: 4px solid #D91667;
+    border-bottom: none;
+    border-left: none;
+  }
+  .product-info {
+    border: 4px solid #D91667;
+    border-top: none;
+  }
+  .card-corner {
+    background: linear-gradient(-45deg, #fff, #fff 28.5px, #D91667 0, #D91667 32px, transparent 0);
+  }
+  .card-circle-hover{
+    background: #D91667;
+  }
+}
+.card-desc.sad {
+  color: #D91667!important;
+}
+
+.product-cards .product-card.disabled {
+  pointer-events: none;
+  color: hsla(0,0%,70%,.5);
+  cursor: default;
+}
+.product-cards .product-card.disabled .card-header .card-corner {
+  background: linear-gradient(-45deg, #fff, #fff 28.5px, #B3B3B3 0, #B3B3B3 32px, transparent 0) ;
+}
+.product-cards .product-card.disabled .card-header .card-rectangle {
+  border: 4px solid #B3B3B3;
+  border-bottom: none;
+  border-left: none;
+  span {
+    color: hsla(0, 0%, 70%, 0.5);
+  }
+}
+.product-cards .product-card.disabled .product-info {
+  border: 4px solid #B3B3B3;
+  border-top: none;
+  img {
+    opacity: 0.5;
+  }
+  p, span {
+    color: hsla(0, 0%, 70%, 0.5);
+  }
+}
+.product-cards .product-card.disabled .product-info .card-circle {
+  background: #B3B3B3;
+  span {
+    color: #fff;
+  }
+}
+.product-cards .product-card .product-info .card-circle-hover {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+  width: 81px;
+  height: 81px;
+  border-radius: 50%;
+  color: #fff;
+  text-align: center;
+  background: #2EA8E6;
+  .product-weight {
+    position: relative;
+    top: 10px;
+  }
+  span {
+    display: block;
+    line-height: 22px;
+  }
+  .number {
+    font-size: 42px;
+    color: #fff;
+    margin-bottom: 5px;
+  }
+  .mass {
+    font-size: 21px;
+    color: #fff;
+  }
+}
+.sad-link {
+  color: #FFFF66;
+  font-size: 13px;
+  text-align: center;
+}

@@ -1,5 +1,8 @@
-function App(): JSX.Element {
-  return <p>Hello, world!</p>;
-}
+import {Main} from '../../pages/main';
+import {cards} from '../../types/card';
 
-export default App;
+export function App(): JSX.Element {
+  return (
+    <Main cards={cards}/>
+  );
+}
